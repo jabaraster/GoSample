@@ -2,7 +2,7 @@ Go言語開発環境作成メモ
 
 # Go言語環境導入
 
-http://golang.jp/install
+[Go言語環境導入](http://golang.jp/install)
 
 
 # IntelliJ IDE
@@ -13,8 +13,13 @@ Vimでも補完出来るように設定出来るらしいが、うまくいか�
 
 またソース変更→ビルド→実行という手順を簡単にするのはIDEが一番.
 
-* http://qiita.com/kaiinui/items/433eb86c022ffcad0bea#3-6
-* http://dev.classmethod.jp/server-side/language/golang-2/
+* [急いで学ぶGo lang#2 IntelliJ IDEAでGo開発](http://dev.classmethod.jp/server-side/language/golang-2/)
+
+
+しかし上記は少し情報が古い.  
+
+* GOROOTの設定は不要.
+* GOPATHは任意の場所、具体的にはライブラリのソースや実行ファイルを格納する、自分で決めた場所でOK.
 
 # goファイル以外をバイナリ化してデプロイを簡単にする
 
@@ -22,8 +27,16 @@ Vimでも補完出来るように設定出来るらしいが、うまくいか�
 
 ```goemon```と```go-bindata```でファイルに変更があったらソースを自動生成するようにする.
 
-[goemon](https://github.com/mattn/goemon)
-[go-bindata](https://github.com/jteeuwen/go-bindata)
+
+```
+$ go get github.com/mattn/goemon/cmd/goemon
+$ go get github.com/jteeuwen/go-bindata/...
+```
+
+下記も参照のこと.
+
+[goemon](https://github.com/mattn/goemon)  
+[go-bindata](https://github.com/jteeuwen/go-bindata)  
 
 GoSampleフォルダで次のコマンドを実行すれば、html/css/jsを保存する度にassets/bindata.goが更新される.
 
