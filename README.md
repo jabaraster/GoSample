@@ -20,12 +20,15 @@ Vimでも補完出来るように設定出来るらしいが、うまくいか�
 
 これしないとデプロイやってられない.
 
-* http://blog.satotaichi.info/one-binary-using-go-bindata/
+```goemon```と```go-bindata```でファイルに変更があったらソースを自動生成するようにする.
 
-GoSampleフォルダで次のコマンドを打つ.
+[goemon](https://github.com/mattn/goemon)
+[go-bindata](https://github.com/jteeuwen/go-bindata)
+
+GoSampleフォルダで次のコマンドを実行すれば、html/css/jsを保存する度にassets/bindata.goが更新される.
 
 ```
-go-bindata -pkg=static -o=static/assets.go html/... css/... js/...
+goemon -c goemon.yml
 ```
 
 # 以下、課題
@@ -37,3 +40,4 @@ go-bindata -pkg=static -o=static/assets.go html/... css/... js/...
 
 ## 出来れば
 * ソース変更時にIntelliJの実行を停止→再度実行としなくてもいいようにしたい
+* bindata.goがソース管理上ボトルネックになる可能性あり

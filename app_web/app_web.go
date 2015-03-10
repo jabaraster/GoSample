@@ -2,7 +2,7 @@ package app_web
 import (
     "net/http"
     "fmt"
-    "../static"
+    "../assets"
 )
 
 type PageData struct {
@@ -15,7 +15,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func ViewHandler(w http.ResponseWriter, r *http.Request) {
-    tmpl, err := static.ParseAsset("html/layout.html")
+    tmpl, err := assets.ParseAsset("layout.html")
     if err != nil {
         panic(err)
     }
