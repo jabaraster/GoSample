@@ -25,18 +25,18 @@ Vimでも補完出来るように設定出来るらしいが、うまくいか�
 
 これしないとデプロイやってられない.
 
-```goemon```と```go-bindata```でファイルに変更があったらソースを自動生成するようにする.
+```goemon``` と ```go-bindata``` でファイルに変更があったらソースを自動生成するようにする.
 
 
 ```
-$ go get github.com/mattn/goemon/cmd/goemon
-$ go get github.com/jteeuwen/go-bindata/...
+$ go get github.com/mattn/goemon/cmd/goemon  
+$ go get github.com/jteeuwen/go-bindata/...  
 ```
 
-下記も参照のこと.
+下記の本家サイトも参照のこと.
 
-[goemon](https://github.com/mattn/goemon)  
-[go-bindata](https://github.com/jteeuwen/go-bindata)  
+* [goemon](https://github.com/mattn/goemon)  
+* [go-bindata](https://github.com/jteeuwen/go-bindata)  
 
 GoSampleフォルダで次のコマンドを実行すれば、html/css/jsを保存する度にassets/bindata.goが更新される.
 
