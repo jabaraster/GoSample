@@ -1,4 +1,4 @@
 React.render(
-        React.createElement("h1", null, "Hello, World!"),
+        <h1>Hello, World!</h1>,
         document.getElementById('hello-world')
         );

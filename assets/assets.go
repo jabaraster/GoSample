@@ -3,9 +3,8 @@ import (
     "html/template"
     "net/http"
     "time"
+    "fmt"
 )
-
-//var ns = template.New("complex")
 
 func ParseAsset(path string) (*template.Template, error) {
     src, err := getData(path)
@@ -18,12 +17,18 @@ func ParseAsset(path string) (*template.Template, error) {
 func CssHandler(w http.ResponseWriter, r *http.Request) {
     data, err := getData(r.URL.Path[1:])
     if err != nil {
-        panic(err)
+        // panic(err) // テスト中はこれでもいいのだが・・・
+        fmt.Println(err)
+        http.NotFound(w, r)
+        return
     }
-    w.Header().Add("content-type", "text/css")
+    w.Header().Add("content-type", "text/css") // これ大事！
     _, err2 := w.Write(data)
     if err2 != nil {
-        panic(err2)
+        // panic(err) // テスト中はこれでもいいのだが・・・
+        fmt.Println(err2)
+        http.NotFound(w, r)
+        return
     }
 }
 

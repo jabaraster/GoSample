@@ -2,14 +2,15 @@
 livereload: :35730
 tasks:
 
-- match: './assets/**/*.html'
+- match: './**/*.html'
   commands:
-  - go-bindata -pkg=assets -o=assets/bindata.go --ignore=".*.go|.*.less" assets/...
+  - go-bindata -pkg=assets -o=assets/bindata.go --ignore=".*.go|.*.less|\.module-cache|.*.un~" assets/...
 
-- match: './assets/**/*.css'
+- match: './**/*.css'
   commands:
-  - go-bindata -pkg=assets -o=assets/bindata.go --ignore=".*.go|.*.less" assets/...
+  - go-bindata -pkg=assets -o=assets/bindata.go --ignore=".*.go|.*.less|\.module-cache|.*.un~" assets/...
 
-- match: './assets/**/*.js'
+- match: './assets/jsx/**/*'
   commands:
-  - go-bindata -pkg=assets -o=assets/bindata.go --ignore=".*.go|.*.less" assets/...
+  - jsx assets/jsx assets/js
+  - go-bindata -pkg=assets -o=assets/bindata.go --ignore=".*.go|.*.less|\.module-cache|.*.un~" assets/...

@@ -44,13 +44,28 @@ GoSampleフォルダで次のコマンドを実行すれば、html/css/jsを保�
 goemon -c goemon.yml
 ```
 
-# 以下、課題
+# Reactのための環境
 
-## 必須
-* JSONを返す
-* CSS/JavaScriptを独立したファイルに書き、HTMLから参照する
-* Reactの開発環境整備
+Reactは、React言語とでも言うべき文法で書いたファイルをJavaScriptに変換する必要がある.
+これを行ってくれるのが```jsx```というツール.  
+先に書いた```goemon```で変換処理は自動で行うように設定してあるので、各開発者は```jsx```をインストールするだけでよい.  
 
-## 出来れば
-* ソース変更時にIntelliJの実行を停止→再度実行としなくてもいいようにしたい
-* bindata.goがソース管理上ボトルネックになる可能性あり
+ただ、```jsx```は```node.js```で作られているので、まずは```node.js```をインストールする必要がある.
+```node.js```のインストーラは[ここ](http://nodejs.jp/nodejs.org_ja/).
+
+```node.js```がインストール出来たら、次のコマンドで```jsx```をインストールする.  
+
+```
+npm install -g react-tools
+```
+
+```npm```というのは```node.js```のパッケージ管理ツール.  
+
+ここまでくれば```goemon```が自動でjsx変換を行ってくれる.  
+HTMLでは変換後のJavaScriptファイルを参照するようにすればOK.  
+
+なお変換前のファイルは```assets/jsx```に格納すること.  
+
+# 課題
+
+[GitHubにて管理](https://github.com/jabaraster/GoSample/issues)
