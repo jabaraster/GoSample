@@ -15,12 +15,23 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func ViewHandler(w http.ResponseWriter, r *http.Request) {
-    tmpl, err := assets.ParseAsset("layout.html")
+    tmpl, err := assets.ParseAsset("html/layout.html")
     if err != nil {
         panic(err)
     }
     pd := PageData{"タイトルやで", 10}
     err = tmpl.Execute(w, pd)
+    if err != nil {
+        panic(err)
+    }
+}
+
+func ChatHnaler(w http.ResponseWriter, r *http.Request) {
+    tmpl, err := assets.ParseAsset("html/chat.html")
+    if err != nil {
+        panic(err)
+    }
+    err = tmpl.Execute(w, nil)
     if err != nil {
         panic(err)
     }

@@ -14,6 +14,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 func main() {
 //    http.HandleFunc("/", app_web.Handler)
     http.HandleFunc("/view", app_web.ViewHandler)
+    http.HandleFunc("/chat", app_web.ChatHnaler)
     http.HandleFunc("/s", handler)
 
     http.HandleFunc("/css/", assets.CssHandler)
