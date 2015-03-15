@@ -5,6 +5,8 @@ import (
     "./app_web"
     "./assets"
     "fmt"
+    "./env"
+    "strconv"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -12,7 +14,8 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-//    http.HandleFunc("/", app_web.Handler)
+    env.Dump()
+
     http.HandleFunc("/view", app_web.ViewHandler)
     http.HandleFunc("/chat", app_web.ChatHnaler)
     http.HandleFunc("/s", handler)
@@ -20,5 +23,5 @@ func main() {
     http.HandleFunc("/css/", assets.CssHandler)
     http.HandleFunc("/js/", assets.AssetsHandler)
 
-    http.ListenAndServe(":9090", nil)
+    http.ListenAndServe(":" + strconv.Itoa(env.WebPort()), nil)
 }

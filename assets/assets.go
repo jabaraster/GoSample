@@ -4,6 +4,8 @@ import (
     "net/http"
     "time"
     "fmt"
+    "../env"
+    "./debug"
 )
 
 func ParseAsset(path string) (*template.Template, error) {
@@ -44,5 +46,8 @@ func AssetsHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func getData(path string) ([]byte, error) {
-    return Asset("assets/" + path)
+    if env.IsProductionMode() {
+        return Asset("assets/" + path)
+    }
+    return debug.Asset("assets/" + path)
 }

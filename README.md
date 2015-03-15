@@ -69,3 +69,12 @@ HTMLでは変換後のJavaScriptファイルを参照するようにすればOK.
 # 課題
 
 [GitHubにて管理](https://github.com/jabaraster/GoSample/issues)
+
+# ビルド
+
+下記ページを参考に事前準備をしておく.
+http://qiita.com/Jxck_/items/02185f51162e92759ebe#2-2
+
+```
+GOOS=linux GOARCH=amd64 go build main.go
+```
