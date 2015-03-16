@@ -114,7 +114,7 @@ React言語だろうが普通のJSファイルだろうが、ここに置くこ�
 
 ### goファイル
 
-ルートフォルダ直下にパッケージ名のディレクトリを切って、そこに関連ファイルを格納.  
+srcディレクトリの下にパッケージ名のディレクトリを切って、そこに関連ファイルを格納.
 
 ※開発が進んだらもう少しルールを細かく設定するつもり.  
 
@@ -123,9 +123,8 @@ React言語だろうが普通のJSファイルだろうが、ここに置くこ�
 
 
 ```
-assets/bindata.go
-assets/debug/bindata_debug.go
-assets/js/ 以下の全てのファイル
+assets/js/ 以下の全てのファイル (assets.goは例外. 触ることがあるかも)
+src/assets/ 以下
 ```
 
 ``` bindata.go ``` と ``` bindata_debug.go ``` はgo-bindataが作るファイル.  
@@ -150,7 +149,7 @@ assets/js/ 以下の全てのファイル
 
 
 ```
-$ GOOS=linux GOARCH=amd64 go build main.go
+$ GOOS=linux GOARCH=amd64 go build -o GoSample src/main.go
 ```
 
 ### サーバプロセス起動

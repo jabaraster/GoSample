@@ -5,7 +5,7 @@ import (
     "time"
     "fmt"
     "../env"
-    "./debug"
+    "../assets/debug"
 )
 
 func ParseAsset(path string) (*template.Template, error) {
