@@ -6,7 +6,7 @@ import (
     "./assets"
     "fmt"
     "./env"
-    "strconv"
+    "github.com/zenazn/goji/bind"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -23,5 +23,5 @@ func main() {
     http.HandleFunc("/css/", assets.CssHandler)
     http.HandleFunc("/js/", assets.AssetsHandler)
 
-    http.ListenAndServe(":" + strconv.Itoa(env.WebPort()), nil)
+    http.ListenAndServe(bind.Default().Addr().Network(), nil)
 }

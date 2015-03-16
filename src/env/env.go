@@ -8,18 +8,17 @@ import (
 
 var (
     mode string
-    webPort int
 )
 
 func init() {
     flag.StringVar(&mode, "mode", "debug", "debug or production")
-    flag.IntVar(&webPort, "webPort", 8081, "http port")
-    flag.Parse()
+    if flag.Parsed() {
+        flag.Parse()
+    }
 }
 
 func Dump() {
     fmt.Printf("mode -> %s\n", mode)
-    fmt.Printf("webPort -> %d\n", webPort)
 }
 
 func Mode() (string) {
@@ -29,8 +28,3 @@ func Mode() (string) {
 func IsProductionMode() (bool) {
     return strings.EqualFold("production", mode)
 }
-
-func WebPort() (int) {
-    return webPort
-}
-

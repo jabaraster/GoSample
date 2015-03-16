@@ -185,6 +185,24 @@ func assets_html_chat_html() (*asset, error) {
 	return a, err
 }
 
+// assets_html_echo_html reads file data from disk. It returns an error on failure.
+func assets_html_echo_html() (*asset, error) {
+	path := "/Users/jabaraster/Documents/Develop/Go/GoSample/assets/html/echo.html"
+	name := "assets/html/echo.html"
+	bytes, err := bindata_read(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
 // assets_html_layout_html reads file data from disk. It returns an error on failure.
 func assets_html_layout_html() (*asset, error) {
 	path := "/Users/jabaraster/Documents/Develop/Go/GoSample/assets/html/layout.html"
@@ -365,6 +383,24 @@ func assets_js_common_react_min_js() (*asset, error) {
 	return a, err
 }
 
+// assets_js_echo_js reads file data from disk. It returns an error on failure.
+func assets_js_echo_js() (*asset, error) {
+	path := "/Users/jabaraster/Documents/Develop/Go/GoSample/assets/js/echo.js"
+	name := "assets/js/echo.js"
+	bytes, err := bindata_read(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
 // assets_js_script_js reads file data from disk. It returns an error on failure.
 func assets_js_script_js() (*asset, error) {
 	path := "/Users/jabaraster/Documents/Develop/Go/GoSample/assets/js/script.js"
@@ -405,6 +441,24 @@ func assets_js_script_min_js() (*asset, error) {
 func assets_jsx_chat_js() (*asset, error) {
 	path := "/Users/jabaraster/Documents/Develop/Go/GoSample/assets/jsx/chat.js"
 	name := "assets/jsx/chat.js"
+	bytes, err := bindata_read(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// assets_jsx_echo_js reads file data from disk. It returns an error on failure.
+func assets_jsx_echo_js() (*asset, error) {
+	path := "/Users/jabaraster/Documents/Develop/Go/GoSample/assets/jsx/echo.js"
+	name := "assets/jsx/echo.js"
 	bytes, err := bindata_read(path, name)
 	if err != nil {
 		return nil, err
@@ -498,6 +552,7 @@ var _bindata = map[string]func() (*asset, error){
 	"assets/css/fonts/glyphicons-halflings-regular.woff2": assets_css_fonts_glyphicons_halflings_regular_woff2,
 	"assets/css/style.css": assets_css_style_css,
 	"assets/html/chat.html": assets_html_chat_html,
+	"assets/html/echo.html": assets_html_echo_html,
 	"assets/html/layout.html": assets_html_layout_html,
 	"assets/js/chat.js": assets_js_chat_js,
 	"assets/js/chat.min.js": assets_js_chat_min_js,
@@ -508,9 +563,11 @@ var _bindata = map[string]func() (*asset, error){
 	"assets/js/common/react-with-addons.min.js": assets_js_common_react_with_addons_min_js,
 	"assets/js/common/react.js": assets_js_common_react_js,
 	"assets/js/common/react.min.js": assets_js_common_react_min_js,
+	"assets/js/echo.js": assets_js_echo_js,
 	"assets/js/script.js": assets_js_script_js,
 	"assets/js/script.min.js": assets_js_script_min_js,
 	"assets/jsx/chat.js": assets_jsx_chat_js,
+	"assets/jsx/echo.js": assets_jsx_echo_js,
 	"assets/jsx/script.js": assets_jsx_script_js,
 }
 
@@ -580,6 +637,8 @@ var _bintree = &_bintree_t{nil, map[string]*_bintree_t{
 		"html": &_bintree_t{nil, map[string]*_bintree_t{
 			"chat.html": &_bintree_t{assets_html_chat_html, map[string]*_bintree_t{
 			}},
+			"echo.html": &_bintree_t{assets_html_echo_html, map[string]*_bintree_t{
+			}},
 			"layout.html": &_bintree_t{assets_html_layout_html, map[string]*_bintree_t{
 			}},
 		}},
@@ -604,6 +663,8 @@ var _bintree = &_bintree_t{nil, map[string]*_bintree_t{
 				"react.min.js": &_bintree_t{assets_js_common_react_min_js, map[string]*_bintree_t{
 				}},
 			}},
+			"echo.js": &_bintree_t{assets_js_echo_js, map[string]*_bintree_t{
+			}},
 			"script.js": &_bintree_t{assets_js_script_js, map[string]*_bintree_t{
 			}},
 			"script.min.js": &_bintree_t{assets_js_script_min_js, map[string]*_bintree_t{
@@ -611,6 +672,8 @@ var _bintree = &_bintree_t{nil, map[string]*_bintree_t{
 		}},
 		"jsx": &_bintree_t{nil, map[string]*_bintree_t{
 			"chat.js": &_bintree_t{assets_jsx_chat_js, map[string]*_bintree_t{
+			}},
+			"echo.js": &_bintree_t{assets_jsx_echo_js, map[string]*_bintree_t{
 			}},
 			"script.js": &_bintree_t{assets_jsx_script_js, map[string]*_bintree_t{
 			}},
