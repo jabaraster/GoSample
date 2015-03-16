@@ -1,12 +1,69 @@
 Go言語開発環境作成メモ
 
-# Go言語環境導入
+# 開発環境構築
 
+次のツールを導入します(上から順番に導入する).
+
+1. Git: Goのライブラリの導入、及びアプリケーションコードのバージョン管理に必要
+1. Mercurial: Goのライブラリの導入に必要
+1. Go言語: 当たり前
+1. go-bindata: 静的ファイルを実行ファイルに含めるために必要
+1. goemon: Go以外のファイルの変更をリアルタイムにブラウザに反映するために必要
+1. node.js: react-toolの実行環境として必要
+1. react-tools: Reactを使いやすくするために必要
+
+IDEはIntelliJを推奨.
+
+
+順に導入手順を記載
+
+## Gitの導入
+
+## Mercurialの導入
+[インストーラ](http://mercurial.selenic.com)
+
+
+## Goの導入
 [Go言語環境導入](http://golang.jp/install)
 
+## go-bindataの導入
 
-# IntelliJ IDE
+GitとGoが導入されている環境で、以下コマンドを実行.  
 
+```
+$ go get github.com/jteeuwen/go-bindata/...  
+```
+
+これで ``` go-bindata ``` というコマンドがインストールされる.
+
+## goemonの導入
+
+GitとGoが導入されている環境で、以下コマンドを実行.  
+
+```
+$ go get github.com/mattn/goemon/cmd/goemon  
+```
+
+これで ``` goemon ``` というコマンドがインストールされる.  
+
+
+## node.jsの導入
+
+[インストーラ](http://nodejs.jp/nodejs.org_ja/)
+
+
+## react-toolsの導入
+
+node.jsがインストールされている環境で以下のコマンドを実行.  
+
+```
+$ npm install -g react-tools
+```
+
+これで ``` jsx ``` というコマンドがインストールされる.  
+
+
+## IntelliJの導入
 せっかく静的言語だから入力補完を有効にしたい.
 Vimでも補完出来るように設定出来るらしいが、うまくいかなかった.
 またVimはクセありすぎなので、ここはIntelliJを使う.
@@ -21,60 +78,100 @@ Vimでも補完出来るように設定出来るらしいが、うまくいか�
 * GOROOTの設定は不要.
 * GOPATHは任意の場所、具体的にはライブラリのソースや実行ファイルを格納する、自分で決めた場所でOK.
 
-# goファイル以外をバイナリ化してデプロイを簡単にする
+# 開発
 
-これしないとデプロイやってられない.
+## goemonによるファイル監視の開始
 
-```goemon``` と ```go-bindata``` でファイルに変更があったらソースを自動生成するようにする.
+下記コマンドでHTML/CSS/JSの監視を開始すること.  
+
+```
+$ goemon -c goemon.yml
+```
+
+なお ``` goemon.yml ``` は河野が作ってGitリポジトリ管理している.  
+
+## ファイル配置ルール
+
+### HTMLファイル
+
+```
+assets/html/
+```
+
+### CSSファイル
+
+```
+assets/css/
+```
+
+### JavaScriptファイル
+
+```
+assets/jsx/
+```
+
+React言語だろうが普通のJSファイルだろうが、ここに置くこと！  
+
+### goファイル
+
+ルートフォルダ直下にパッケージ名のディレクトリを切って、そこに関連ファイルを格納.  
+
+※開発が進んだらもう少しルールを細かく設定するつもり.  
+
+### 編集しちゃいけないファイル
+要は自動生成されるファイル.  
 
 
 ```
-$ go get github.com/mattn/goemon/cmd/goemon  
-$ go get github.com/jteeuwen/go-bindata/...  
+assets/bindata.go
+assets/debug/bindata_debug.go
+assets/js/ 以下の全てのファイル
 ```
 
-下記の本家サイトも参照のこと.
+``` bindata.go ``` と ``` bindata_debug.go ``` はgo-bindataが作るファイル.  
+``` assets/js/ ``` 以下はjsxが作るファイル.  
 
-* [goemon](https://github.com/mattn/goemon)  
-* [go-bindata](https://github.com/jteeuwen/go-bindata)  
-
-GoSampleフォルダで次のコマンドを実行すれば、html/css/jsを保存する度にassets/bindata.goが更新される.
-
-```
-goemon -c goemon.yml
-```
-
-# Reactのための環境
-
-Reactは、React言語とでも言うべき文法で書いたファイルをJavaScriptに変換する必要がある.
-これを行ってくれるのが```jsx```というツール.  
-先に書いた```goemon```で変換処理は自動で行うように設定してあるので、各開発者は```jsx```をインストールするだけでよい.  
-
-ただ、```jsx```は```node.js```で作られているので、まずは```node.js```をインストールする必要がある.
-```node.js```のインストーラは[ここ](http://nodejs.jp/nodejs.org_ja/).
-
-```node.js```がインストール出来たら、次のコマンドで```jsx```をインストールする.  
-
-```
-npm install -g react-tools
-```
-
-```npm```というのは```node.js```のパッケージ管理ツール.  
-
-ここまでくれば```goemon```が自動でjsx変換を行ってくれる.  
-HTMLでは変換後のJavaScriptファイルを参照するようにすればOK.  
-
-なお変換前のファイルは```assets/jsx```に格納すること.  
 
 # 課題
 
 [GitHubにて管理](https://github.com/jabaraster/GoSample/issues)
 
-# ビルド
+# デプロイ
 
-下記ページを参考に事前準備をしておく.
-http://qiita.com/Jxck_/items/02185f51162e92759ebe#2-2
+
+## ビルド
+
+### ビルドの事前準備
+
+[ここ](http://qiita.com/Jxck_/items/02185f51162e92759ebe#2-2)を参考に事前準備をしておく.
+
+
+### ビルド実施(Linuxへのデプロイ前提)
+
 
 ```
-GOOS=linux GOARCH=amd64 go build main.go
+$ GOOS=linux GOARCH=amd64 go build main.go
 ```
+
+### サーバプロセス起動
+
+```
+$ main -mode=production -webPort=80
+```
+
+実行ファイルをサーバに持って行くのが、ちょっとたいへんw  
+S3なんかを使ってやり取りして下さい.  
+
+
+# Appendix
+
+
+## goemonでやっていること
+### Reactのjsx変換
+### HTML/CSS/JSのバイナリデータ化
+
+## HTML/CSS/JS読み込みの挙動の切り替え
+
+開発環境では変更をリアルタイムに反映するようにし、デプロイ環境では実行ファイル内のバイナリデータを扱い高速に動作するようにしている.  
+環境の切り替えは、起動時に ``` mode ``` 引数で行うようにしており、``` production ``` が指定された場合はデプロイ環境とみなしている.  
+
