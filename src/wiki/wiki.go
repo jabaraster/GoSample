@@ -1,10 +1,17 @@
 package wiki
 
 import (
+    "fmt"
     "os"
     "time"
+    "net/http"
+    "encoding/json"
+
     _ "github.com/mattn/go-sqlite3"
     "github.com/naoina/genmai"
+    "github.com/zenazn/goji/web"
+
+    "../webutil"
 )
 
 var (
@@ -12,11 +19,11 @@ var (
 )
 
 type Wiki struct {
-    Id   int64  `db:"pk"`
-    Title string `db:"unique"`
-    Body string `default:""`
-    Created time.Time
-    Updated time.Time
+    Id   int64  `db:"pk" json:"id"`
+    Title string `db:"unique" json:"title"`
+    Body string `json:"title"`
+    Created time.Time `json:"created"`
+    Updated time.Time `json:"updated"`
 }
 
 func (wiki *Wiki) BeforeInsert() error {
@@ -32,7 +39,7 @@ func (wiki *Wiki) BeforeUpdate() error {
     return nil
 }
 
-func Init() {
+func init() {
     db, err := genmai.New(&genmai.SQLite3Dialect{}, ":memory:")
     if err != nil {
         panic(err)
@@ -41,5 +48,34 @@ func Init() {
     if err := db.CreateTableIfNotExists(&Wiki{}); err != nil {
         panic(err)
     }
-    db.Insert(&Wiki{Title: "Title", Body: "Body"})
 }
+
+func Cnv(wiki *Wiki) (string, error) {
+    _, e := db.Insert(wiki)
+    if e != nil {
+        panic(e)
+    }
+    b, err := json.Marshal(wiki)
+    return string(b), err
+}
+
+func SampleView(w http.ResponseWriter, r *http.Request) {
+    webutil.WriteWithTemplate(w, r, "html/wiki/sample.html", nil)
+}
+
+func SaveWiki(c web.C, w http.ResponseWriter, r *http.Request) {
+    title := r.Form.Get("Title")
+    body := r.Form.Get("Body")
+    fmt.Printf("Title: %s, Body: %s\n", title, body)
+
+    data := &Wiki{Title: title, Body: body}
+    db.Insert(data)
+    outjson, err := json.Marshal(data)
+    if err != nil {
+        fmt.Println(err)
+        panic(err)
+    }
+    w.Header().Set("Content-Type", "application/json")
+    fmt.Fprint(w, string(outjson))
+}
+

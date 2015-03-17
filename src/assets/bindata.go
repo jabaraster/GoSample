@@ -76,7 +76,7 @@ func assets_css_chat_css() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/css/chat.css", size: 150, mode: os.FileMode(420), modTime: time.Unix(1426170700, 0)}
+	info := bindata_file_info{name: "assets/css/chat.css", size: 150, mode: os.FileMode(420), modTime: time.Unix(1426462200, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -96,7 +96,7 @@ func assets_css_common_bootstrap_min_css() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/css/common/bootstrap.min.css", size: 117150, mode: os.FileMode(420), modTime: time.Unix(1425980944, 0)}
+	info := bindata_file_info{name: "assets/css/common/bootstrap.min.css", size: 117150, mode: os.FileMode(420), modTime: time.Unix(1426462200, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -116,7 +116,7 @@ func assets_css_fonts_glyphicons_halflings_regular_eot() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/css/fonts/glyphicons-halflings-regular.eot", size: 14079, mode: os.FileMode(420), modTime: time.Unix(1420596233, 0)}
+	info := bindata_file_info{name: "assets/css/fonts/glyphicons-halflings-regular.eot", size: 14079, mode: os.FileMode(420), modTime: time.Unix(1426462200, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -136,7 +136,7 @@ func assets_css_fonts_glyphicons_halflings_regular_svg() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/css/fonts/glyphicons-halflings-regular.svg", size: 63157, mode: os.FileMode(420), modTime: time.Unix(1420596233, 0)}
+	info := bindata_file_info{name: "assets/css/fonts/glyphicons-halflings-regular.svg", size: 63157, mode: os.FileMode(420), modTime: time.Unix(1426462200, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -156,7 +156,7 @@ func assets_css_fonts_glyphicons_halflings_regular_ttf() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/css/fonts/glyphicons-halflings-regular.ttf", size: 29512, mode: os.FileMode(420), modTime: time.Unix(1420596233, 0)}
+	info := bindata_file_info{name: "assets/css/fonts/glyphicons-halflings-regular.ttf", size: 29512, mode: os.FileMode(420), modTime: time.Unix(1426462200, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -176,7 +176,7 @@ func assets_css_fonts_glyphicons_halflings_regular_woff() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/css/fonts/glyphicons-halflings-regular.woff", size: 16448, mode: os.FileMode(420), modTime: time.Unix(1420596233, 0)}
+	info := bindata_file_info{name: "assets/css/fonts/glyphicons-halflings-regular.woff", size: 16448, mode: os.FileMode(420), modTime: time.Unix(1426462200, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -196,7 +196,7 @@ func assets_css_fonts_glyphicons_halflings_regular_woff2() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/css/fonts/glyphicons-halflings-regular.woff2", size: 18028, mode: os.FileMode(420), modTime: time.Unix(1421555886, 0)}
+	info := bindata_file_info{name: "assets/css/fonts/glyphicons-halflings-regular.woff2", size: 18028, mode: os.FileMode(420), modTime: time.Unix(1426462200, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -216,7 +216,7 @@ func assets_css_style_css() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/css/style.css", size: 126, mode: os.FileMode(420), modTime: time.Unix(1426062933, 0)}
+	info := bindata_file_info{name: "assets/css/style.css", size: 126, mode: os.FileMode(420), modTime: time.Unix(1426462200, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -236,7 +236,7 @@ func assets_html_chat_html() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/html/chat.html", size: 762, mode: os.FileMode(420), modTime: time.Unix(1426430204, 0)}
+	info := bindata_file_info{name: "assets/html/chat.html", size: 762, mode: os.FileMode(420), modTime: time.Unix(1426462200, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -256,7 +256,7 @@ func assets_html_echo_html() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/html/echo.html", size: 612, mode: os.FileMode(420), modTime: time.Unix(1426514665, 0)}
+	info := bindata_file_info{name: "assets/html/echo.html", size: 612, mode: os.FileMode(420), modTime: time.Unix(1426547680, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -276,7 +276,27 @@ func assets_html_layout_html() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/html/layout.html", size: 1263, mode: os.FileMode(420), modTime: time.Unix(1426168682, 0)}
+	info := bindata_file_info{name: "assets/html/layout.html", size: 1263, mode: os.FileMode(420), modTime: time.Unix(1426462200, 0)}
+	a := &asset{bytes: bytes, info:  info}
+	return a, nil
+}
+
+var _assets_html_wiki_sample_html = []byte("\x1f\x8b\x08\x00\x00\x09\x6e\x88\x00\xff\x94\x53\x3b\x52\xc3\x30\x10\xed\x73\x0a\xa1\xde\xd1\xd0\x51\xd8\xa9\xb9\x01\xb5\x2c\x6f\x22\x25\x96\xd6\x48\x1b\x82\x3b\x20\x87\xa0\xa6\xa6\x64\xa8\x39\x8c\x69\xb8\x05\xf2\x27\x21\x09\x21\x13\x3c\xe3\xb1\x47\xfb\xde\xdb\xb7\x4f\x52\x7a\x51\xa0\xa2\xba\x02\xa6\xc9\x96\x93\x51\xba\xf9\x80\x2c\x26\x23\x16\x9f\xd4\x02\x49\xa6\xb4\xf4\x01\x28\xe3\x4b\x9a\x26\x57\x5c\x0c\xb5\xd2\xb8\x05\xf3\x50\x66\x3c\x50\x5d\x42\xd0\x00\xc4\x99\xf6\x30\xcd\xb8\x50\x21\x08\x85\xd6\xa2\x13\x39\x22\x05\xf2\xb2\x1a\x5b\xe3\xc6\xb1\xc0\x59\xdb\x34\xe3\x04\xf7\xd4\x02\xf9\xd9\x82\x5a\xd2\x29\x01\x32\x54\xc2\xe4\xc6\x2c\x4c\xf3\xf4\xde\xac\xdf\x9a\xf5\x73\xb3\x7e\x4d\x45\xbf\xde\x63\x82\xf2\xa6\x22\x16\xbc\x8a\xa2\xf3\xad\xc9\xf9\xed\x12\x7c\xdd\x39\x9c\x47\xbd\x54\xf4\xb8\xd3\xa4\xfd\xc9\xce\xe7\x79\x90\x8a\xfe\x8b\x4f\x56\x86\x74\x22\x8b\x02\x5d\x38\xd2\x2f\x15\xfd\xb6\xa5\x39\x16\xf5\x20\x57\x98\x3b\xa6\x4a\x19\x42\xc6\x15\x3a\x92\xc6\x81\x1f\xb2\xea\xea\xfa\xf2\x48\x58\x71\xf1\x07\x31\x45\x6f\x59\x3c\x04\x1a\x8b\x8c\x57\x18\xe2\x7e\x44\x2b\x06\x5d\xf4\xb7\x8a\x54\x71\x8d\x33\xd8\x91\xec\x48\xf9\x92\x08\xdd\xa6\x73\x4e\x8e\xc5\x37\xa9\xbc\xb1\xd2\xd7\x07\xe0\x8e\x60\x36\xd8\x59\x59\x57\xda\x44\xaf\x6c\xfb\x97\xe0\xa2\x1d\xd3\xfc\xa6\x7d\x3d\x3c\x7e\x7e\xbc\xec\xb7\x16\x7d\xef\x9d\x09\x44\x3b\xc2\x90\x87\x88\x81\xfc\x95\x74\x7b\xb4\x0e\x13\xed\xa3\x8c\x91\x74\xf7\xe2\x3b\x00\x00\xff\xff\x91\xa9\xa9\xe4\x2f\x03\x00\x00")
+
+func assets_html_wiki_sample_html_bytes() ([]byte, error) {
+	return bindata_read(
+		_assets_html_wiki_sample_html,
+		"assets/html/wiki/sample.html",
+	)
+}
+
+func assets_html_wiki_sample_html() (*asset, error) {
+	bytes, err := assets_html_wiki_sample_html_bytes()
+	if err != nil {
+		return nil, err
+	}
+
+	info := bindata_file_info{name: "assets/html/wiki/sample.html", size: 815, mode: os.FileMode(420), modTime: time.Unix(1426555689, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -296,7 +316,7 @@ func assets_js_chat_js() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/js/chat.js", size: 2014, mode: os.FileMode(420), modTime: time.Unix(1426514620, 0)}
+	info := bindata_file_info{name: "assets/js/chat.js", size: 2014, mode: os.FileMode(420), modTime: time.Unix(1426462200, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -316,7 +336,7 @@ func assets_js_chat_min_js() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/js/chat.min.js", size: 1466, mode: os.FileMode(420), modTime: time.Unix(1426175873, 0)}
+	info := bindata_file_info{name: "assets/js/chat.min.js", size: 1466, mode: os.FileMode(420), modTime: time.Unix(1426462200, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -336,7 +356,7 @@ func assets_js_common_jsxtransformer_js() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/js/common/JSXTransformer.js", size: 493171, mode: os.FileMode(420), modTime: time.Unix(1425966386, 0)}
+	info := bindata_file_info{name: "assets/js/common/JSXTransformer.js", size: 493171, mode: os.FileMode(420), modTime: time.Unix(1426462200, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -356,7 +376,7 @@ func assets_js_common_bootstrap_min_js() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/js/common/bootstrap.min.js", size: 35452, mode: os.FileMode(420), modTime: time.Unix(1425980973, 0)}
+	info := bindata_file_info{name: "assets/js/common/bootstrap.min.js", size: 35452, mode: os.FileMode(420), modTime: time.Unix(1426462200, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -376,7 +396,7 @@ func assets_js_common_jquery_min_js() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/js/common/jquery.min.js", size: 95931, mode: os.FileMode(420), modTime: time.Unix(1425980989, 0)}
+	info := bindata_file_info{name: "assets/js/common/jquery.min.js", size: 95931, mode: os.FileMode(420), modTime: time.Unix(1426462200, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -396,7 +416,7 @@ func assets_js_common_react_with_addons_js() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/js/common/react-with-addons.js", size: 659449, mode: os.FileMode(420), modTime: time.Unix(1425966390, 0)}
+	info := bindata_file_info{name: "assets/js/common/react-with-addons.js", size: 659449, mode: os.FileMode(420), modTime: time.Unix(1426462200, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -416,7 +436,7 @@ func assets_js_common_react_with_addons_min_js() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/js/common/react-with-addons.min.js", size: 131176, mode: os.FileMode(420), modTime: time.Unix(1425966398, 0)}
+	info := bindata_file_info{name: "assets/js/common/react-with-addons.min.js", size: 131176, mode: os.FileMode(420), modTime: time.Unix(1426462200, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -436,7 +456,7 @@ func assets_js_common_react_js() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/js/common/react.js", size: 598400, mode: os.FileMode(420), modTime: time.Unix(1425966386, 0)}
+	info := bindata_file_info{name: "assets/js/common/react.js", size: 598400, mode: os.FileMode(420), modTime: time.Unix(1426462200, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -456,12 +476,12 @@ func assets_js_common_react_min_js() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/js/common/react.min.js", size: 120732, mode: os.FileMode(420), modTime: time.Unix(1425966394, 0)}
+	info := bindata_file_info{name: "assets/js/common/react.min.js", size: 120732, mode: os.FileMode(420), modTime: time.Unix(1426462200, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
 
-var _assets_js_echo_js = []byte("\x1f\x8b\x08\x00\x00\x09\x6e\x88\x00\xff\xac\x52\xcd\x4a\xf3\x40\x14\xdd\xe7\x29\x86\x6c\x9a\x40\xda\x07\x68\xf9\x36\x5f\x51\x10\xb4\x0b\x7d\x82\xc9\xe4\x36\x19\x9c\xcc\x84\xc9\x1d\x35\x94\x80\x34\xb8\x11\x04\x37\x3e\x80\x3b\x1f\x41\x50\xf0\x61\x82\x3f\x8f\xe1\x24\x29\xd1\xd6\x76\x21\x38\x30\x70\xe7\x9e\xcb\x39\x73\x2e\xe7\x8c\x6a\x72\x48\x43\x10\xe4\x1f\x39\x06\xca\x70\xc4\x34\x50\x84\xa9\xa0\x79\xee\x2d\x22\x9e\x67\x82\x16\x33\x9a\xc2\x98\xb8\xed\xa0\x1b\x38\xc4\x1e\x0d\x32\x02\x3d\x26\x73\x23\x19\x72\x25\x3d\x9f\x2c\x5a\xa0\x03\xd1\x68\x49\xbc\xbe\xd1\x9c\xef\xf4\x7b\x02\x52\x90\xe8\xb9\x73\xa5\x53\x37\x20\x0b\xd6\xe8\xad\x64\x66\x70\x7e\x04\x79\x4e\x63\xd8\x6f\xd0\x32\x20\x6b\x3c\x3b\xb9\xb8\xcc\x0c\x36\x64\x58\x64\x0d\x0f\xc2\x45\xf3\xb4\x06\x18\x24\x4a\xb4\xdf\x75\xdf\xae\xef\xde\x1f\x5e\x3e\x2e\xaf\x5e\x6f\x6f\x2c\xa8\x61\x6e\x9b\xd4\x60\xa2\xb4\x5b\xfa\x7f\x2a\x55\x57\xf7\x75\x55\xd5\xcb\xa7\xba\x7a\xae\x97\x8f\xbd\x5a\xda\x99\xfb\x85\x5c\x68\x10\x95\xdc\xdc\x53\x88\x92\xd8\x3b\xcc\x34\x4f\xa9\x2e\xda\x5a\xc4\x76\x0a\x39\x0a\xe8\xbd\xda\x86\x92\x53\xc1\xd9\xe9\x98\x60\xc2\xf3\x91\x92\x27\x26\x4c\x39\x6e\x5b\xec\x6e\xc7\x9b\xea\xb1\x28\xb2\x84\x33\x25\x49\x5f\x0d\x99\x50\x26\x1a\x9a\x4c\x28\x1a\x59\x7b\x3f\xd8\xd7\x3b\x5f\xaf\xae\x2a\x9d\xd2\x9f\x38\x9d\x7a\x17\xaf\x2e\x40\xdb\xfe\xd3\x46\x31\x20\xd2\x08\xe1\x77\x81\x8c\x14\x33\x0d\x34\x8a\x01\x57\x53\xff\x8b\x83\xc8\x1b\xac\xb2\x94\x0f\x7c\xc7\x9f\x7c\x06\x00\x00\xff\xff\xb4\x65\xa1\x97\xf0\x02\x00\x00")
+var _assets_js_echo_js = []byte("\x1f\x8b\x08\x00\x00\x09\x6e\x88\x00\xff\x6c\x8f\x41\x4a\xc6\x30\x10\x85\xf7\x39\xc5\x90\xcd\x9f\x40\xc8\x01\xfe\x1f\x37\x8a\x0b\x41\x5c\x88\x17\x18\x93\xb1\x2d\xa4\x49\x49\x26\x62\x29\xbd\xbb\x6d\xa3\xc5\x85\xb3\x0a\x99\xf7\xbe\x79\xef\x13\x33\x3c\xe3\x3b\x05\xb8\x83\x57\x42\xc7\xd6\x65\x42\xa6\x87\x80\xa5\xa8\xc5\x0f\x65\x0a\x38\xbf\xe0\x48\x57\x90\x87\x50\x1a\x01\xdb\x64\x8a\x9e\xf2\x15\x3e\x6a\x74\x3c\xa4\xa8\x34\x2c\xc7\xa2\x2d\xb9\xe6\x08\xea\xfc\xd8\xe7\x2f\xfe\x31\xd0\x48\x91\x95\x2c\x13\x46\x69\x20\xd6\x10\x0c\x70\x3f\x14\xeb\x91\xd1\x92\xeb\xd3\x1b\x7d\xb1\x3e\x09\xed\xb5\x8a\x55\xdf\x44\x23\xb5\x04\xed\xc6\x7f\xec\x23\xad\x81\xe5\x97\xb5\x15\xe8\x53\x47\x72\xd5\xad\x81\x4f\xae\xee\x42\xdb\x11\xff\x78\xee\xe7\x27\xaf\x2e\x61\x37\x5e\xb4\xd0\xb7\xef\x00\x00\x00\xff\xff\x52\xf0\xe7\x85\x1e\x01\x00\x00")
 
 func assets_js_echo_js_bytes() ([]byte, error) {
 	return bindata_read(
@@ -476,7 +496,27 @@ func assets_js_echo_js() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/js/echo.js", size: 752, mode: os.FileMode(420), modTime: time.Unix(1426514643, 0)}
+	info := bindata_file_info{name: "assets/js/echo.js", size: 286, mode: os.FileMode(420), modTime: time.Unix(1426547680, 0)}
+	a := &asset{bytes: bytes, info:  info}
+	return a, nil
+}
+
+var _assets_js_echo_min_js = []byte("\x1f\x8b\x08\x00\x00\x09\x6e\x88\x00\xff\x6c\x8e\x41\xaa\xc2\x30\x14\x45\xb7\x52\x32\x4a\x20\x64\x01\x2d\x7f\xf2\xc5\x81\x20\x0e\xc4\x0d\x3c\x93\x6b\x5b\x48\x93\x92\xbc\x88\xa5\x74\xef\x62\xab\xe0\xc0\xf9\x39\xe7\xde\x3b\xa5\xea\x48\x57\xf8\xbf\x33\xc8\xb2\xb1\x09\xc4\xd8\x79\xca\x59\xce\xae\xcf\xa3\xa7\xe9\x44\x03\x6a\xb1\x52\x42\x27\x04\x87\x54\xdf\x4a\xb0\xdc\xc7\x20\xd5\x9c\xc0\x25\x85\xea\xdb\xdf\x7b\x0c\x08\x2c\x45\x1e\x29\x08\x1d\x8a\xf7\x9a\xbb\x3e\x1b\x47\x4c\x06\xb6\x8b\x17\x3c\x58\x2d\x8b\x6a\x36\x6d\xab\xca\x5f\x8d\x75\x57\xcf\x1f\xa9\x16\x5d\x6c\x21\x16\xa5\x5d\xb4\xe5\x45\x98\x16\xfc\x86\xff\xa7\x83\x93\xc2\xaf\x4f\x95\x6a\x9e\x01\x00\x00\xff\xff\xf3\xe7\x93\xcd\xdd\x00\x00\x00")
+
+func assets_js_echo_min_js_bytes() ([]byte, error) {
+	return bindata_read(
+		_assets_js_echo_min_js,
+		"assets/js/echo.min.js",
+	)
+}
+
+func assets_js_echo_min_js() (*asset, error) {
+	bytes, err := assets_js_echo_min_js_bytes()
+	if err != nil {
+		return nil, err
+	}
+
+	info := bindata_file_info{name: "assets/js/echo.min.js", size: 221, mode: os.FileMode(420), modTime: time.Unix(1426547680, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -496,7 +536,7 @@ func assets_js_script_js() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/js/script.js", size: 130, mode: os.FileMode(420), modTime: time.Unix(1426514620, 0)}
+	info := bindata_file_info{name: "assets/js/script.js", size: 130, mode: os.FileMode(420), modTime: time.Unix(1426462200, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -516,7 +556,7 @@ func assets_js_script_min_js() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/js/script.min.js", size: 100, mode: os.FileMode(420), modTime: time.Unix(1426171663, 0)}
+	info := bindata_file_info{name: "assets/js/script.min.js", size: 100, mode: os.FileMode(420), modTime: time.Unix(1426462200, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -536,12 +576,12 @@ func assets_jsx_chat_js() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/jsx/chat.js", size: 1673, mode: os.FileMode(420), modTime: time.Unix(1426175899, 0)}
+	info := bindata_file_info{name: "assets/jsx/chat.js", size: 1673, mode: os.FileMode(420), modTime: time.Unix(1426462200, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
 
-var _assets_jsx_echo_js = []byte("\x1f\x8b\x08\x00\x00\x09\x6e\x88\x00\xff\x94\x52\x4d\x6a\xdb\x40\x18\xdd\xeb\x14\xc3\x6c\x2c\x41\x6d\xed\x6b\xc9\x8b\x9a\x16\x0a\xad\x17\xed\x09\x46\xa3\xcf\xd2\xd0\xd1\x8c\x18\x7d\xd3\x56\x18\x43\xb0\xc8\x26\x10\xc8\x26\x07\xc8\x2e\x47\x08\x24\x90\xc3\x88\xfc\x1c\x23\x92\xc6\x71\x6c\xe2\x4d\x06\x04\x4f\xdf\xfb\xf4\xde\x13\x6f\xfe\x32\x43\x7e\xb0\x04\x24\x89\xc9\x2f\x60\x1c\x27\xdc\x00\x43\x98\x4b\x56\x55\xfe\xca\x23\xdd\x31\xa0\x52\x30\x9f\xc9\xd2\x2a\x8e\x42\x2b\x3f\x20\x8e\x70\x24\x5a\xa3\x88\xbf\x1b\xf4\x27\x5a\x6a\x53\x10\xde\x6b\x2c\x58\x01\x31\x5d\xc0\xbf\x9f\x50\x55\x2c\x83\x6f\x1d\x43\x67\x07\xdb\xc3\x17\x42\x95\x16\x09\xd6\x65\xb7\x8d\xf0\x1f\x29\x29\x25\xe3\x90\x6b\xd9\x79\xc7\xf4\xf1\xec\xf2\xe9\xfa\xfe\xf9\xe4\xf4\xe1\xe2\x9c\x76\xa6\xcb\x98\x32\x8b\xb9\x36\x94\x84\x1f\x57\x6b\x9b\xab\xb6\x69\xda\xcd\x6d\xdb\xdc\xb5\x9b\x9b\xad\x60\xe1\x12\x1e\x57\x4c\x2c\xa2\x56\xfb\xff\x94\xa0\x22\xdd\x33\x2e\x8d\x28\x98\xa9\x07\x2c\x33\x4a\x50\xa0\x84\xd7\xc4\x94\x68\x35\x97\x82\xff\x89\x57\x98\x8b\x6a\xa2\xd5\x6f\x9b\x14\x02\xd7\xef\x2d\x5c\xf0\x7d\x87\x4c\xd6\x65\x2e\x78\x67\xbb\x43\x63\x2e\xb5\x4d\xc7\xb6\x94\x9a\xa5\x74\x16\x85\xe2\x48\xd6\xd0\x85\x3d\x64\xa2\xb0\x2f\xe5\x6d\x16\x0c\x68\xed\xad\x83\xa9\xe7\x9a\x77\x3d\xbb\x26\x23\x77\x29\xc2\xd9\xa7\xe1\x35\xd5\xdc\x16\xa0\x70\x92\x01\x7e\x95\xd0\xc3\x2f\xf5\xf7\xd4\x1f\x6d\x5b\xad\x46\x81\x17\x4c\x5f\x02\x00\x00\xff\xff\xaa\x84\x76\x94\x4d\x02\x00\x00")
+var _assets_jsx_echo_js = []byte("\x1f\x8b\x08\x00\x00\x09\x6e\x88\x00\xff\x3c\x8e\xcd\x8a\xc3\x30\x0c\x84\xef\x7e\x0a\x91\x4b\x6c\x58\x9c\xfb\xe6\xe7\xb0\xcb\x1e\x16\x7a\x2a\x7d\x01\xd5\x56\x93\x80\x6b\x17\x5b\x29\x2d\x21\xef\xde\x26\xa6\x99\xd3\xa0\x4f\xa3\xd1\x1d\x23\x1c\xf0\x4c\x0e\x5a\x38\x12\x1a\xd6\x26\x12\x32\xfd\x3a\x4c\x49\xce\x02\xde\x8a\xe4\x2d\xc5\x6f\xb8\x4c\xde\xf0\x18\xbc\x54\x90\x41\x86\x3c\x45\x0f\x72\x1f\xac\x6a\xd2\x0d\x7d\x37\xf3\x30\x26\x6d\x91\x51\x93\x19\xc2\x89\x1e\xbc\x34\xd5\x86\xf6\x6d\xb5\xb9\x45\x2c\xaa\x16\xb9\x3f\xb7\xe5\x7b\x4d\x7e\xed\x93\x6e\x8b\x21\xf4\x54\x40\xd5\x7d\x6d\xd8\x06\x33\x5d\xc9\xb3\xee\x89\xff\x1c\xad\xf6\xe7\xf9\x6f\x65\xe9\xd6\x58\xa9\x84\xaa\x5f\x01\x00\x00\xff\xff\xa2\x61\x13\xbe\xe0\x00\x00\x00")
 
 func assets_jsx_echo_js_bytes() ([]byte, error) {
 	return bindata_read(
@@ -556,7 +596,7 @@ func assets_jsx_echo_js() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/jsx/echo.js", size: 589, mode: os.FileMode(420), modTime: time.Unix(1426514643, 0)}
+	info := bindata_file_info{name: "assets/jsx/echo.js", size: 224, mode: os.FileMode(420), modTime: time.Unix(1426547680, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -576,7 +616,7 @@ func assets_jsx_script_js() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/jsx/script.js", size: 104, mode: os.FileMode(420), modTime: time.Unix(1426062482, 0)}
+	info := bindata_file_info{name: "assets/jsx/script.js", size: 104, mode: os.FileMode(420), modTime: time.Unix(1426462200, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -644,6 +684,7 @@ var _bindata = map[string]func() (*asset, error){
 	"assets/html/chat.html": assets_html_chat_html,
 	"assets/html/echo.html": assets_html_echo_html,
 	"assets/html/layout.html": assets_html_layout_html,
+	"assets/html/wiki/sample.html": assets_html_wiki_sample_html,
 	"assets/js/chat.js": assets_js_chat_js,
 	"assets/js/chat.min.js": assets_js_chat_min_js,
 	"assets/js/common/JSXTransformer.js": assets_js_common_jsxtransformer_js,
@@ -654,6 +695,7 @@ var _bindata = map[string]func() (*asset, error){
 	"assets/js/common/react.js": assets_js_common_react_js,
 	"assets/js/common/react.min.js": assets_js_common_react_min_js,
 	"assets/js/echo.js": assets_js_echo_js,
+	"assets/js/echo.min.js": assets_js_echo_min_js,
 	"assets/js/script.js": assets_js_script_js,
 	"assets/js/script.min.js": assets_js_script_min_js,
 	"assets/jsx/chat.js": assets_jsx_chat_js,
@@ -731,6 +773,10 @@ var _bintree = &_bintree_t{nil, map[string]*_bintree_t{
 			}},
 			"layout.html": &_bintree_t{assets_html_layout_html, map[string]*_bintree_t{
 			}},
+			"wiki": &_bintree_t{nil, map[string]*_bintree_t{
+				"sample.html": &_bintree_t{assets_html_wiki_sample_html, map[string]*_bintree_t{
+				}},
+			}},
 		}},
 		"js": &_bintree_t{nil, map[string]*_bintree_t{
 			"chat.js": &_bintree_t{assets_js_chat_js, map[string]*_bintree_t{
@@ -754,6 +800,8 @@ var _bintree = &_bintree_t{nil, map[string]*_bintree_t{
 				}},
 			}},
 			"echo.js": &_bintree_t{assets_js_echo_js, map[string]*_bintree_t{
+			}},
+			"echo.min.js": &_bintree_t{assets_js_echo_min_js, map[string]*_bintree_t{
 			}},
 			"script.js": &_bintree_t{assets_js_script_js, map[string]*_bintree_t{
 			}},

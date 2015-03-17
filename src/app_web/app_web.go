@@ -15,10 +15,6 @@ func Handler(w http.ResponseWriter, r *http.Request) {
     fmt.Fprintln(w, "Hello, World! ->", r.URL.Path[0:])
 }
 
-func ViewHandler2(c web.C, w http.ResponseWriter, r *http.Request) {
-    ViewHandler(w, r)
-}
-
 func ViewHandler(w http.ResponseWriter, r *http.Request) {
     tmpl, err := assets.ParseAsset("html/layout.html")
     if err != nil {
