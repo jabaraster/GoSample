@@ -1,1 +1,1 @@
-body{background:#ffdcf0}h1{background:orange;color:white}table.table tr:hover{background:rgba(180,180,180,0.8);cursor:pointer}
+body{margin-top:10px;background:#e6e6e6}h1{background:orange;color:white;padding:2px;border-bottom:solid 2px #fff}table.table tr:hover{background:rgba(180,180,180,0.8);cursor:pointer}.selected{background:#FFC0CB !important}form.button-form{display:inline}

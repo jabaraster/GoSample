@@ -167,6 +167,24 @@ func assets_css_style_css() (*asset, error) {
 	return a, err
 }
 
+// assets_css_wiki_css reads file data from disk. It returns an error on failure.
+func assets_css_wiki_css() (*asset, error) {
+	path := "/Users/jabaraster/Documents/Develop/Go/GoSample/assets/css/wiki.css"
+	name := "assets/css/wiki.css"
+	bytes, err := bindata_read(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
 // assets_html_chat_html reads file data from disk. It returns an error on failure.
 func assets_html_chat_html() (*asset, error) {
 	path := "/Users/jabaraster/Documents/Develop/Go/GoSample/assets/html/chat.html"
@@ -221,10 +239,64 @@ func assets_html_layout_html() (*asset, error) {
 	return a, err
 }
 
-// assets_html_wiki_sample_html reads file data from disk. It returns an error on failure.
-func assets_html_wiki_sample_html() (*asset, error) {
-	path := "/Users/jabaraster/Documents/Develop/Go/GoSample/assets/html/wiki/sample.html"
-	name := "assets/html/wiki/sample.html"
+// assets_html_wiki_edit_html reads file data from disk. It returns an error on failure.
+func assets_html_wiki_edit_html() (*asset, error) {
+	path := "/Users/jabaraster/Documents/Develop/Go/GoSample/assets/html/wiki/edit.html"
+	name := "assets/html/wiki/edit.html"
+	bytes, err := bindata_read(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// assets_html_wiki_index_html reads file data from disk. It returns an error on failure.
+func assets_html_wiki_index_html() (*asset, error) {
+	path := "/Users/jabaraster/Documents/Develop/Go/GoSample/assets/html/wiki/index.html"
+	name := "assets/html/wiki/index.html"
+	bytes, err := bindata_read(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// assets_html_wiki_new_html reads file data from disk. It returns an error on failure.
+func assets_html_wiki_new_html() (*asset, error) {
+	path := "/Users/jabaraster/Documents/Develop/Go/GoSample/assets/html/wiki/new.html"
+	name := "assets/html/wiki/new.html"
+	bytes, err := bindata_read(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// assets_html_wiki_view_html reads file data from disk. It returns an error on failure.
+func assets_html_wiki_view_html() (*asset, error) {
+	path := "/Users/jabaraster/Documents/Develop/Go/GoSample/assets/html/wiki/view.html"
+	name := "assets/html/wiki/view.html"
 	bytes, err := bindata_read(path, name)
 	if err != nil {
 		return nil, err
@@ -473,6 +545,114 @@ func assets_js_script_min_js() (*asset, error) {
 	return a, err
 }
 
+// assets_js_wiki_edit_js reads file data from disk. It returns an error on failure.
+func assets_js_wiki_edit_js() (*asset, error) {
+	path := "/Users/jabaraster/Documents/Develop/Go/GoSample/assets/js/wiki/edit.js"
+	name := "assets/js/wiki/edit.js"
+	bytes, err := bindata_read(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// assets_js_wiki_edit_min_js reads file data from disk. It returns an error on failure.
+func assets_js_wiki_edit_min_js() (*asset, error) {
+	path := "/Users/jabaraster/Documents/Develop/Go/GoSample/assets/js/wiki/edit.min.js"
+	name := "assets/js/wiki/edit.min.js"
+	bytes, err := bindata_read(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// assets_js_wiki_index_js reads file data from disk. It returns an error on failure.
+func assets_js_wiki_index_js() (*asset, error) {
+	path := "/Users/jabaraster/Documents/Develop/Go/GoSample/assets/js/wiki/index.js"
+	name := "assets/js/wiki/index.js"
+	bytes, err := bindata_read(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// assets_js_wiki_index_min_js reads file data from disk. It returns an error on failure.
+func assets_js_wiki_index_min_js() (*asset, error) {
+	path := "/Users/jabaraster/Documents/Develop/Go/GoSample/assets/js/wiki/index.min.js"
+	name := "assets/js/wiki/index.min.js"
+	bytes, err := bindata_read(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// assets_js_wiki_new_js reads file data from disk. It returns an error on failure.
+func assets_js_wiki_new_js() (*asset, error) {
+	path := "/Users/jabaraster/Documents/Develop/Go/GoSample/assets/js/wiki/new.js"
+	name := "assets/js/wiki/new.js"
+	bytes, err := bindata_read(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// assets_js_wiki_new_min_js reads file data from disk. It returns an error on failure.
+func assets_js_wiki_new_min_js() (*asset, error) {
+	path := "/Users/jabaraster/Documents/Develop/Go/GoSample/assets/js/wiki/new.min.js"
+	name := "assets/js/wiki/new.min.js"
+	bytes, err := bindata_read(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
 // assets_jsx_chat_js reads file data from disk. It returns an error on failure.
 func assets_jsx_chat_js() (*asset, error) {
 	path := "/Users/jabaraster/Documents/Develop/Go/GoSample/assets/jsx/chat.js"
@@ -513,6 +693,60 @@ func assets_jsx_echo_js() (*asset, error) {
 func assets_jsx_script_js() (*asset, error) {
 	path := "/Users/jabaraster/Documents/Develop/Go/GoSample/assets/jsx/script.js"
 	name := "assets/jsx/script.js"
+	bytes, err := bindata_read(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// assets_jsx_wiki_edit_js reads file data from disk. It returns an error on failure.
+func assets_jsx_wiki_edit_js() (*asset, error) {
+	path := "/Users/jabaraster/Documents/Develop/Go/GoSample/assets/jsx/wiki/edit.js"
+	name := "assets/jsx/wiki/edit.js"
+	bytes, err := bindata_read(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// assets_jsx_wiki_index_js reads file data from disk. It returns an error on failure.
+func assets_jsx_wiki_index_js() (*asset, error) {
+	path := "/Users/jabaraster/Documents/Develop/Go/GoSample/assets/jsx/wiki/index.js"
+	name := "assets/jsx/wiki/index.js"
+	bytes, err := bindata_read(path, name)
+	if err != nil {
+		return nil, err
+	}
+
+	fi, err := os.Stat(path)
+	if err != nil {
+		err = fmt.Errorf("Error reading asset info %s at %s: %v", name, path, err)
+	}
+
+	a := &asset{bytes: bytes, info: fi}
+	return a, err
+}
+
+// assets_jsx_wiki_new_js reads file data from disk. It returns an error on failure.
+func assets_jsx_wiki_new_js() (*asset, error) {
+	path := "/Users/jabaraster/Documents/Develop/Go/GoSample/assets/jsx/wiki/new.js"
+	name := "assets/jsx/wiki/new.js"
 	bytes, err := bindata_read(path, name)
 	if err != nil {
 		return nil, err
@@ -587,10 +821,14 @@ var _bindata = map[string]func() (*asset, error){
 	"assets/css/fonts/glyphicons-halflings-regular.woff": assets_css_fonts_glyphicons_halflings_regular_woff,
 	"assets/css/fonts/glyphicons-halflings-regular.woff2": assets_css_fonts_glyphicons_halflings_regular_woff2,
 	"assets/css/style.css": assets_css_style_css,
+	"assets/css/wiki.css": assets_css_wiki_css,
 	"assets/html/chat.html": assets_html_chat_html,
 	"assets/html/echo.html": assets_html_echo_html,
 	"assets/html/layout.html": assets_html_layout_html,
-	"assets/html/wiki/sample.html": assets_html_wiki_sample_html,
+	"assets/html/wiki/edit.html": assets_html_wiki_edit_html,
+	"assets/html/wiki/index.html": assets_html_wiki_index_html,
+	"assets/html/wiki/new.html": assets_html_wiki_new_html,
+	"assets/html/wiki/view.html": assets_html_wiki_view_html,
 	"assets/js/chat.js": assets_js_chat_js,
 	"assets/js/chat.min.js": assets_js_chat_min_js,
 	"assets/js/common/JSXTransformer.js": assets_js_common_jsxtransformer_js,
@@ -604,9 +842,18 @@ var _bindata = map[string]func() (*asset, error){
 	"assets/js/echo.min.js": assets_js_echo_min_js,
 	"assets/js/script.js": assets_js_script_js,
 	"assets/js/script.min.js": assets_js_script_min_js,
+	"assets/js/wiki/edit.js": assets_js_wiki_edit_js,
+	"assets/js/wiki/edit.min.js": assets_js_wiki_edit_min_js,
+	"assets/js/wiki/index.js": assets_js_wiki_index_js,
+	"assets/js/wiki/index.min.js": assets_js_wiki_index_min_js,
+	"assets/js/wiki/new.js": assets_js_wiki_new_js,
+	"assets/js/wiki/new.min.js": assets_js_wiki_new_min_js,
 	"assets/jsx/chat.js": assets_jsx_chat_js,
 	"assets/jsx/echo.js": assets_jsx_echo_js,
 	"assets/jsx/script.js": assets_jsx_script_js,
+	"assets/jsx/wiki/edit.js": assets_jsx_wiki_edit_js,
+	"assets/jsx/wiki/index.js": assets_jsx_wiki_index_js,
+	"assets/jsx/wiki/new.js": assets_jsx_wiki_new_js,
 }
 
 // AssetDir returns the file names below a certain
@@ -671,6 +918,8 @@ var _bintree = &_bintree_t{nil, map[string]*_bintree_t{
 			}},
 			"style.css": &_bintree_t{assets_css_style_css, map[string]*_bintree_t{
 			}},
+			"wiki.css": &_bintree_t{assets_css_wiki_css, map[string]*_bintree_t{
+			}},
 		}},
 		"html": &_bintree_t{nil, map[string]*_bintree_t{
 			"chat.html": &_bintree_t{assets_html_chat_html, map[string]*_bintree_t{
@@ -680,7 +929,13 @@ var _bintree = &_bintree_t{nil, map[string]*_bintree_t{
 			"layout.html": &_bintree_t{assets_html_layout_html, map[string]*_bintree_t{
 			}},
 			"wiki": &_bintree_t{nil, map[string]*_bintree_t{
-				"sample.html": &_bintree_t{assets_html_wiki_sample_html, map[string]*_bintree_t{
+				"edit.html": &_bintree_t{assets_html_wiki_edit_html, map[string]*_bintree_t{
+				}},
+				"index.html": &_bintree_t{assets_html_wiki_index_html, map[string]*_bintree_t{
+				}},
+				"new.html": &_bintree_t{assets_html_wiki_new_html, map[string]*_bintree_t{
+				}},
+				"view.html": &_bintree_t{assets_html_wiki_view_html, map[string]*_bintree_t{
 				}},
 			}},
 		}},
@@ -713,6 +968,20 @@ var _bintree = &_bintree_t{nil, map[string]*_bintree_t{
 			}},
 			"script.min.js": &_bintree_t{assets_js_script_min_js, map[string]*_bintree_t{
 			}},
+			"wiki": &_bintree_t{nil, map[string]*_bintree_t{
+				"edit.js": &_bintree_t{assets_js_wiki_edit_js, map[string]*_bintree_t{
+				}},
+				"edit.min.js": &_bintree_t{assets_js_wiki_edit_min_js, map[string]*_bintree_t{
+				}},
+				"index.js": &_bintree_t{assets_js_wiki_index_js, map[string]*_bintree_t{
+				}},
+				"index.min.js": &_bintree_t{assets_js_wiki_index_min_js, map[string]*_bintree_t{
+				}},
+				"new.js": &_bintree_t{assets_js_wiki_new_js, map[string]*_bintree_t{
+				}},
+				"new.min.js": &_bintree_t{assets_js_wiki_new_min_js, map[string]*_bintree_t{
+				}},
+			}},
 		}},
 		"jsx": &_bintree_t{nil, map[string]*_bintree_t{
 			"chat.js": &_bintree_t{assets_jsx_chat_js, map[string]*_bintree_t{
@@ -720,6 +989,14 @@ var _bintree = &_bintree_t{nil, map[string]*_bintree_t{
 			"echo.js": &_bintree_t{assets_jsx_echo_js, map[string]*_bintree_t{
 			}},
 			"script.js": &_bintree_t{assets_jsx_script_js, map[string]*_bintree_t{
+			}},
+			"wiki": &_bintree_t{nil, map[string]*_bintree_t{
+				"edit.js": &_bintree_t{assets_jsx_wiki_edit_js, map[string]*_bintree_t{
+				}},
+				"index.js": &_bintree_t{assets_jsx_wiki_index_js, map[string]*_bintree_t{
+				}},
+				"new.js": &_bintree_t{assets_jsx_wiki_new_js, map[string]*_bintree_t{
+				}},
 			}},
 		}},
 	}},

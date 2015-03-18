@@ -3,7 +3,6 @@ import (
     "html/template"
     "net/http"
     "time"
-    "fmt"
     "../env"
     "../assets/debug"
 )
@@ -19,17 +18,21 @@ func ParseAsset(path string) (*template.Template, error) {
 func CssHandler(w http.ResponseWriter, r *http.Request) {
     data, err := getData(r.URL.Path[1:])
     if err != nil {
-        // panic(err) // テスト中はこれでもいいのだが・・・
-        fmt.Println(err)
-        http.NotFound(w, r)
+        if env.IsDebugMode() {
+            panic(err)
+        } else {
+            http.NotFound(w, r)
+        }
         return
     }
     w.Header().Add("content-type", "text/css") // これ大事！
     _, err2 := w.Write(data)
     if err2 != nil {
-        // panic(err) // テスト中はこれでもいいのだが・・・
-        fmt.Println(err2)
-        http.NotFound(w, r)
+        if env.IsDebugMode() {
+            panic(err)
+        } else {
+            http.NotFound(w, r)
+        }
         return
     }
 }

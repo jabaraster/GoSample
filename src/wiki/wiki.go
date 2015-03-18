@@ -1,11 +1,9 @@
 package wiki
 
 import (
-    "fmt"
     "os"
     "time"
     "net/http"
-    "encoding/json"
 
     _ "github.com/mattn/go-sqlite3"
     "github.com/naoina/genmai"
@@ -18,10 +16,14 @@ var (
     db *genmai.DB
 )
 
+type Page struct {
+    Title string
+}
+
 type Wiki struct {
     Id   int64  `db:"pk" json:"id"`
     Title string `db:"unique" json:"title"`
-    Body string `json:"title"`
+    Body string `json:"body"`
     Created time.Time `json:"created"`
     Updated time.Time `json:"updated"`
 }
@@ -40,7 +42,8 @@ func (wiki *Wiki) BeforeUpdate() error {
 }
 
 func init() {
-    db, err := genmai.New(&genmai.SQLite3Dialect{}, ":memory:")
+    var err error
+    db, err = genmai.New(&genmai.SQLite3Dialect{}, ":memory:")
     if err != nil {
         panic(err)
     }
@@ -48,34 +51,96 @@ func init() {
     if err := db.CreateTableIfNotExists(&Wiki{}); err != nil {
         panic(err)
     }
+    db.Insert(&Wiki{ Title: "サンプルページ", Body: "簡単なWikiアプリを作ってみました。これはサンプル用のページです。ページ間のリンクなんかは実装していないので、ほんとに簡単なアプリです。" })
 }
 
-func Cnv(wiki *Wiki) (string, error) {
-    _, e := db.Insert(wiki)
-    if e != nil {
-        panic(e)
-    }
-    b, err := json.Marshal(wiki)
-    return string(b), err
+func New(w http.ResponseWriter, r *http.Request) {
+    webutil.WriteTemplateResponse(w, r, "html/wiki/new.html", nil)
 }
 
-func SampleView(w http.ResponseWriter, r *http.Request) {
-    webutil.WriteWithTemplate(w, r, "html/wiki/sample.html", nil)
+func Index(w http.ResponseWriter, r *http.Request) {
+    webutil.WriteTemplateResponse(w, r, "html/wiki/index.html", nil)
 }
 
-func SaveWiki(c web.C, w http.ResponseWriter, r *http.Request) {
-    title := r.Form.Get("Title")
-    body := r.Form.Get("Body")
-    fmt.Printf("Title: %s, Body: %s\n", title, body)
-
-    data := &Wiki{Title: title, Body: body}
-    db.Insert(data)
-    outjson, err := json.Marshal(data)
-    if err != nil {
-        fmt.Println(err)
+func IndexData(w http.ResponseWriter, r *http.Request) {
+    var result []Wiki
+    err := db.Select(&result)
+    if  err != nil {
         panic(err)
     }
-    w.Header().Set("Content-Type", "application/json")
-    fmt.Fprint(w, string(outjson))
+    webutil.WriteJsonResponse(w, result)
 }
 
+func View(c web.C, w http.ResponseWriter, r *http.Request) {
+    wiki := getByTitle(c)
+    if wiki == nil {
+        http.NotFound(w, r)
+        return
+    }
+    webutil.WriteTemplateResponse(w, r, "html/wiki/view.html", wiki)
+}
+
+func Edit(c web.C, w http.ResponseWriter, r *http.Request) {
+    webutil.WriteTemplateResponse(w, r, "html/wiki/edit.html", &Page{c.URLParams["title"]})
+}
+
+func EditData(c web.C, w http.ResponseWriter, r *http.Request) {
+    wiki := getByTitle(c)
+    if wiki == nil {
+        http.NotFound(w ,r)
+        return
+    }
+    webutil.WriteJsonResponse(w, wiki)
+}
+
+func Delete(c web.C, w http.ResponseWriter, r *http.Request) {
+    wiki := getByTitle(c)
+    if wiki == nil {
+        http.NotFound(w, r)
+        return
+    }
+    _, err := db.Delete(wiki)
+    if err != nil {
+        panic(err);
+    }
+    http.Redirect(w, r, "/wiki/", http.StatusSeeOther)
+}
+
+func Save(c web.C, w http.ResponseWriter, r *http.Request) {
+    wiki := getByTitle(c)
+    if wiki == nil {
+        title := c.URLParams["title"]
+        body := r.FormValue("body")
+
+        data := Wiki{Title: title, Body: body}
+        _, err := db.Insert(&data)
+        if err != nil {
+            panic(err)
+        }
+        err2 := webutil.WriteJsonResponse(w, data)
+        if err2 != nil {
+            panic(err2)
+        }
+    } else {
+        wiki.Body = r.FormValue("body")
+        _, err := db.Update(wiki)
+        if err != nil {
+            panic(err)
+        }
+    }
+}
+
+func getByTitle(c web.C) *Wiki {
+    var result []Wiki
+    err := db.Select(&result, db.Where("title", "=", c.URLParams["title"]))
+    if err != nil {
+        panic(err)
+    }
+    switch (len(result)) {
+        case 0:
+            return nil
+        case 1:
+            return &result[0]
+    }
+    panic(result)
+}

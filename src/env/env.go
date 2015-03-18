@@ -25,6 +25,10 @@ func Mode() (string) {
     return mode
 }
 
-func IsProductionMode() (bool) {
+func IsProductionMode() bool {
     return strings.EqualFold("production", mode)
+}
+
+func IsDebugMode() bool {
+    return strings.EqualFold("debug", mode)
 }

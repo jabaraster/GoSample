@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="/css/common/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <title>ページ {{.Title}} 編集 - Wiki</title>
+    <script src="/js/common/jquery.min.js"></script>
+    <script src="/js/common/bootstrap.min.js"></script>
+    <script src="/js/common/react.js"></script>
+    <script src="/js/common/react-with-addons.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <a href="/wiki/" class="btn btn-default">
+                <i class="glyphicon glyphicon-circle-arrow-left"></i>
+                一覧へ
+            </a>
+        </div>
+        <input type="hidden" id="TitleValue" value="{{.Title}}" >
+        <div id="PageEditor"></div>
+        なぜかtextareaが編集できない・・・Reactのせいだとは思うのだが、なぜこんなことになるのか・・・
+    </div>
+    <script src="/js/wiki/edit.min.js"></script>
+</body>
+</html>
