@@ -9,6 +9,7 @@ import (
     "github.com/naoina/genmai"
     "github.com/zenazn/goji/web"
 
+    "../env"
     "../webutil"
 )
 
@@ -43,7 +44,7 @@ func (wiki *Wiki) BeforeUpdate() error {
 
 func init() {
     var err error
-    db, err = genmai.New(&genmai.SQLite3Dialect{}, ":memory:")
+    db, err = createDb()
     if err != nil {
         panic(err)
     }
@@ -52,6 +53,16 @@ func init() {
         panic(err)
     }
     db.Insert(&Wiki{ Title: "サンプルページ", Body: "簡単なWikiアプリを作ってみました。これはサンプル用のページです。ページ間のリンクなんかは実装していないので、ほんとに簡単なアプリです。" })
+}
+
+func createDb() (*genmai.DB, error) {
+    switch env.DbKind() {
+        case env.DbKindSQLite3:
+            return genmai.New(&genmai.SQLite3Dialect{}, "./wiki.db")
+        case env.DbKindPostgreSQL:
+            return genmai.New(&genmai.PostgresDialect{}, "host=" + env.PostgresHost() + " dbname=" + env.PostgresDbName() + " user=" + env.PostgresUser() + " password=" + env.PostgresPassword())
+    }
+    panic(env.DbKind())
 }
 
 func New(w http.ResponseWriter, r *http.Request) {

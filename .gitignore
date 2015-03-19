@@ -27,3 +27,4 @@ _testmain.go
 assets/js/.module-cache
 assets/debug/bindata_debug.go
 main
+wiki.db
